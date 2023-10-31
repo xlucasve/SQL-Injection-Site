@@ -25,7 +25,6 @@ async function getUsuarios() {
     console.log(e);
   }
 }
-
 module.exports = {
   getUsuarios: getUsuarios,
 };

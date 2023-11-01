@@ -46,7 +46,8 @@ router.get("/prueba", async (req, res) => {
 });
 
 router.route("/usuarios").get((request, response) => {
-  controller.getUsuarios().then((result) => {
+  const { email } = request.body;
+  controller.getUsuarios(email).then((result) => {
     response.json(result);
   });
 });

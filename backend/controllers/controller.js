@@ -16,10 +16,13 @@ const sqlConfig = {
   },
 };
 
-async function getUsuarios() {
+async function getUsuarios(email) {
   try {
     let pool = await sql.connect(sqlConfig);
-    let resultado = await pool.request().query("SELECT * from USERS");
+    let resultado = await pool
+      .request()
+      .input("email", sql.VarChar, email)
+      .query("SELECT * from USERS WHERE email = @email");
     return resultado.recordsets;
   } catch (e) {
     console.log(e);

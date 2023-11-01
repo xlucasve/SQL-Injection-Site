@@ -38,8 +38,8 @@ router.use((request, response, next) => {
 });
 
 router.get("/prueba", async (req, res) => {
-  const { usuario } = req.body;
-  const query = `SELECT * FROM usuarios where usuario = '${usuario}'`;
+  const { email } = req.body;
+  const query = `SELECT * FROM USERS where email = '${email}'`;
   let pool = await sql.connect(sqlConfig);
   const rows = await pool.request().query(query);
   res.json(rows.recordsets);

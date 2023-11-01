@@ -19,7 +19,7 @@ const sqlConfig = {
 async function getUsuarios() {
   try {
     let pool = await sql.connect(sqlConfig);
-    let resultado = await pool.request().query("SELECT * from usuarios");
+    let resultado = await pool.request().query("SELECT * from USERS");
     return resultado.recordsets;
   } catch (e) {
     console.log(e);

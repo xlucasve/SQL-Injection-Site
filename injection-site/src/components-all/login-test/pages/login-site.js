@@ -1,22 +1,30 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
+import login from "../../api/login-api";
 import "./login.css";
+import Information from "../../information/pages/information";
 
 const LoginTest = () => {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+
+  const loginSubmitHandler = async (event) => {
+    event.preventDefault();
+    const resultado = await login(email);
+  };
 
   return (
     <div>
       <div className="cont">
-        <form>
+        <form onSubmit={loginSubmitHandler}>
           <div>
             <input
               type="text"
               id="user"
               name="user"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -29,11 +37,14 @@ const LoginTest = () => {
               className="input-text"
             />
           </div>
+          <button type="submit">Enviar</button>
         </form>
       </div>
       <p>
-        Select * FROM USERS WHERE userName='{userName}' AND password='{pass}'
+        Select * FROM USERS WHERE email='{email}' AND password='{pass}'
       </p>
+
+      <Link to="/info">Mira como puedes detener esto</Link>
     </div>
   );
 };

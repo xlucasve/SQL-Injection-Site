@@ -37,12 +37,16 @@ router.use((request, response, next) => {
   next();
 });
 
-router.get("/prueba", async (req, res) => {
+router.post("/prueba", async (req, res) => {
   const { email } = req.body;
   const query = `SELECT * FROM USERS where email = '${email}'`;
   let pool = await sql.connect(sqlConfig);
-  const rows = await pool.request().query(query);
-  res.json(rows.recordsets);
+  try {
+    const rows = await pool.request().query(query);
+    res.json(rows.recordsets);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.route("/usuarios").get((request, response) => {

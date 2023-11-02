@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 
 import login from "../../api/login-api";
 import "./login.css";
-import Information from "../../information/pages/information";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const LoginTest = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const texto = `SELECT * FROM USERS WHERE email = '${email}' AND password = '${pass}'`;
 
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
@@ -40,9 +42,9 @@ const LoginTest = () => {
           <button type="submit">Enviar</button>
         </form>
       </div>
-      <p>
-        Select * FROM USERS WHERE email='{email}' AND password='{pass}'
-      </p>
+      <SyntaxHighlighter language="sql" style={docco}>
+        {texto}
+      </SyntaxHighlighter>
 
       <Link to="/info">Mira como puedes detener esto</Link>
     </div>

@@ -10,6 +10,7 @@ const Information = () => {
         solicitudes a la base de datos con variables, que son escritras por los
         usuarios del sistema, enviadas en formato String.
       </p>
+
       <Link to="/">Realiza ataques SQL aquí</Link>
     </div>
   );

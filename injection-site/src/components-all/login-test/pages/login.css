@@ -10,7 +10,8 @@
 
 .sql-data {
   margin: 0 auto;
-  width: 75%;
+  width: 85%;
+  font-size: medium;
 }
 
 .json-data {

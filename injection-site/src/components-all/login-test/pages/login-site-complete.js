@@ -18,6 +18,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import {
   docco,
   atomOneDark,
+  darcula,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import login from "../../api/login-api";
 import "./login.css";

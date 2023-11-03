@@ -24,7 +24,7 @@ const login = async (email) => {
   } else {
     console.log(response.message);
   }
-  return response;
+  return JSON.stringify(response);
 };
 
 export default login;

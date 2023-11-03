@@ -4,16 +4,22 @@ import { Link } from "react-router-dom";
 import login from "../../api/login-api";
 import "./login.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {
+  docco,
+  atomOneDark,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const LoginTest = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [response, setResponse] = useState({});
   const texto = `SELECT * FROM USERS WHERE email = '${email}' AND password = '${pass}'`;
 
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
     const resultado = await login(email);
+    console.log(resultado);
+    setResponse(resultado);
   };
 
   return (
@@ -42,9 +48,16 @@ const LoginTest = () => {
           <button type="submit">Enviar</button>
         </form>
       </div>
-      <SyntaxHighlighter language="sql" style={docco}>
-        {texto}
-      </SyntaxHighlighter>
+      <div>
+        <SyntaxHighlighter language="sql" style={atomOneDark}>
+          {texto}
+        </SyntaxHighlighter>
+      </div>
+      <div className="bg-gray-500 grid place-items-center h-screen">
+        <SyntaxHighlighter language="json" style={atomOneDark}>
+          {JSON.stringify(response)}
+        </SyntaxHighlighter>
+      </div>
 
       <Link to="/info">Mira como puedes detener esto</Link>
     </div>

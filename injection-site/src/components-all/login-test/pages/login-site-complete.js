@@ -20,6 +20,7 @@ import {
   atomOneDark,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import login from "../../api/login-api";
+import "./login.css";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -37,12 +38,15 @@ export default function SignIn() {
 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [response, setResponse] = useState([{}]);
+
   const sqlQuery = `SELECT * FROM USERS WHERE email = '${email}' AND password = '${pass}'`;
 
   const loginSubmitHandler = async (event) => {
     event.preventDefault();
     const resultado = await login(email);
     console.log(resultado);
+    setResponse(resultado);
   };
 
   return (
@@ -118,9 +122,16 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container>
-      <SyntaxHighlighter language="sql" style={atomOneDark}>
-        {sqlQuery}
-      </SyntaxHighlighter>
+      <div className="sql-data">
+        <SyntaxHighlighter language="sql" style={atomOneDark}>
+          {sqlQuery}
+        </SyntaxHighlighter>
+      </div>
+      <div className="json-data">
+        <SyntaxHighlighter language="json" style={atomOneDark}>
+          {JSON.stringify(response, null, 2)}
+        </SyntaxHighlighter>
+      </div>
     </ThemeProvider>
   );
 }

@@ -8,8 +8,12 @@
   align-self: center;
 }
 
-.json-response {
+.sql-data {
+  margin: 0 auto;
+  width: 75%;
+}
+
+.json-data {
   margin: 0 auto;
   width: 50%;
-  height: 50%;
 }

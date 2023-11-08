@@ -2,7 +2,11 @@ CREATE TABLE [USERS] (
   [user_id] int PRIMARY KEY IDENTITY(1, 1),
   [email] nvarchar(255),
   [password] nvarchar(255),
-  [isAdmin] BIT
+  [role] nvarchar(255),
+  [card_number] int,
+  [card_three_digit_code] int,
+  [expiry_month] int,
+  [expiry_year] int
 )
 GO
 
@@ -11,7 +15,7 @@ CREATE TABLE [PRODUCTS] (
   [name] nvarchar(255),
   [short_description] nvarchar(255),
   [long_description] nvarchar(255),
-  [price] int,
+  [price] int
 )
 GO
 

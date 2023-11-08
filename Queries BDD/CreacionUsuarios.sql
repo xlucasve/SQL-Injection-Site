@@ -1,8 +1,8 @@
 INSERT INTO USERS VALUES
-    ('juanperez@yahoo.com', 'migatitoesmuylindo!5', 0),
-    ('alberto.fern.andez@gmail.com', 'Aut0G3neR4TedPasSw0Rd', 0),
-    ('Kazuo.Hirai@sony.com', 'MeHackearonOtraVez', 1),
-    ('omar@gmail.com', 't3rmin4tor', 0)
+    ('juanperez@yahoo.com', 'migatitoesmuylindo!5', 'Admin', 5100, 231, 09, 26),
+    ('alberto.fern.andez@gmail.com', 'Aut0G3neR4TedPasSw0Rd', 'User', 305004, 131, 11, 27),
+    ('Kazuo.Hirai@sony.com', 'MeHackearonOtraVez', 'Admin', 378205, 454, 04, 24),
+    ('omar@gmail.com', 't3rmin4tor', 'User', 411111, 110, 08, 29)
 ;
 GO
 

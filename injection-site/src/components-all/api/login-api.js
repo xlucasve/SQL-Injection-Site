@@ -15,7 +15,7 @@ const login = async (email) => {
   };
 
   let response = await fetch(
-    "http://localhost:8090/api/prueba",
+    "http://localhost:8090/api/injection",
     requestOptions
   );
   if (response.status === 200) {

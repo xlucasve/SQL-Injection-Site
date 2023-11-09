@@ -37,7 +37,7 @@ router.use((request, response, next) => {
   next();
 });
 
-router.post("/prueba", async (req, res) => {
+router.post("/injection", async (req, res) => {
   const { email } = req.body;
   const query = `SELECT * FROM USERS where email = '${email}'`;
   let pool = await sql.connect(sqlConfig);

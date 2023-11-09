@@ -21,13 +21,26 @@ async function getUsuarios(email) {
     let pool = await sql.connect(sqlConfig);
     let resultado = await pool
       .request()
-      .input("email", sql.VarChar, email)
+      .input("email", sql.VarChar, email) //Envía en un parámetro el dato
       .query("SELECT * from USERS WHERE email = @email");
     return resultado.recordsets;
   } catch (e) {
     console.log(e);
   }
 }
+
+async function getUsuariosInjectable(email) {
+  //Envía el string literal a la consulta SQL
+  const query = `SELECT * FROM USERS where email = '${email}'`;
+  try {
+    let pool = await sql.connect(sqlConfig);
+    const rows = await pool.request().query(query);
+    return rows.recordsets;
+  } catch (error) {
+    console.log(error);
+  }
+}
 module.exports = {
   getUsuarios: getUsuarios,
+  getUsuariosInjectable: getUsuariosInjectable,
 };

@@ -1,0 +1,26 @@
+.background-body {
+  background-color: #282c34;
+  margin: 0;
+}
+
+.main-body {
+  background-color: #515e7a;
+  margin: 0 20% 0 20%;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+}
+
+.imagen {
+  width: 50%;
+}
+
+.code-block {
+}
+
+.section-title {
+  color: black;
+}
+
+p {
+  color: whitesmoke;
+}

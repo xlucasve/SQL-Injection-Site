@@ -43,9 +43,6 @@ export default function SignIn() {
 
   return (
     <div>
-      <div>
-        <Link to="/info">Mira como puedes detener esto</Link>
-      </div>
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -103,18 +100,10 @@ export default function SignIn() {
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
+
+              <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                <Link to="/info">Realiza ataques SQL aquí</Link>
+              </Button>
             </Box>
           </Box>
         </Container>

@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import LoginTest from "./components-all/login-test/pages/login-site";
 import Information from "./components-all/information/pages/information";
 import "./App.css";
 import SignIn from "./components-all/login-test/pages/login-site-complete";

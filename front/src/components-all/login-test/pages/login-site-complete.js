@@ -100,10 +100,11 @@ export default function SignIn() {
               >
                 Sign In
               </Button>
-
-              <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                <Link to="/info">Realiza ataques SQL aquí</Link>
-              </Button>
+              <Link to="/info">
+                <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+                  Realiza ataques SQL aquí
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Container>

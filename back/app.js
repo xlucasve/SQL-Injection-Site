@@ -18,7 +18,7 @@ router.use((request, response, next) => {
   next();
 });
 
-router.route("/injection").get((request, response) => {
+router.route("/injection").post((request, response) => {
   const { email } = request.body;
   controller.getUsuariosInjectable(email).then((result) => {
     response.json(result);

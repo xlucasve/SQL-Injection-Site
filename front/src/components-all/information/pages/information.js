@@ -6,6 +6,7 @@ import {
   atomOneDarkReasonable,
   docco,
 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import Button from "@mui/material/Button";
 
 import "./information.css";
 
@@ -112,6 +113,36 @@ const Information = () => {
   mysqli_stmt_bind_param($stmt, "s", $userPass); mysqli_stmt_execute($stmt);
   $row = mysqli_stmt_fetch($stmt);
   `;
+
+  const rustsql = `
+  let users: Vec<User> = sqlx::query_as::<_, User>(
+    "SELECT * FROM users WHERE name = ?"
+  )
+  .bind(&username)
+  .fetch_all(&pool)
+  .await
+  .unwrap();
+  `;
+
+  const golang = `
+  import (
+    "database/sql"
+    
+    _ "github.com/lib/pq"
+    )
+    
+    func main() {
+        connStr := "user=pqgotest dbname=pqgotest sslmode=verify-full"
+        db, err := sql.Open("postgres", connStr)
+        if err != nil {
+            log.Fatal(err)
+        }
+    
+        age := 21
+        rows, err := db.Query("SELECT name FROM users WHERE age = $1", age)
+    
+    }
+    `;
   return (
     <div className="background-body">
       <div className="main-body">
@@ -203,10 +234,20 @@ const Information = () => {
           <SyntaxHighlighter language="php" style={atomOneDarkReasonable}>
             {php}
           </SyntaxHighlighter>
-          <p className="section-title">RUBY</p>
-          <p className="section-title">Go lang</p>
+          <p className="section-title">RUST</p>
+          <SyntaxHighlighter language="rust" style={atomOneDarkReasonable}>
+            {rustsql}
+          </SyntaxHighlighter>
+          <p className="section-title">Go Lang</p>
+          <SyntaxHighlighter language="go" style={atomOneDarkReasonable}>
+            {golang}
+          </SyntaxHighlighter>
         </div>
-        <Link to="/">Realiza ataques SQL aquí</Link>
+        <Link to="/">
+          <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            Realiza ataques SQL aquí
+          </Button>
+        </Link>
       </div>
     </div>
   );

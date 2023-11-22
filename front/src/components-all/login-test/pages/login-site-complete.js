@@ -102,7 +102,7 @@ export default function SignIn() {
               </Button>
               <Link to="/info">
                 <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                  Realiza ataques SQL aquí
+                  Aprende como evitarlos
                 </Button>
               </Link>
             </Box>

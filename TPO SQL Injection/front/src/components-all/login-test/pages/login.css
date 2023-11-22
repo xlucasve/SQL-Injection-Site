@@ -1,0 +1,21 @@
+.cont {
+  display: grid;
+  place-items: center;
+}
+
+.input-text {
+  width: fit-content;
+  align-self: center;
+}
+
+.sql-data {
+  margin: 0 auto;
+  width: 85%;
+  font-size: medium;
+}
+
+.json-data {
+  margin: 0 auto;
+  width: 72%;
+  font-size: small;
+}

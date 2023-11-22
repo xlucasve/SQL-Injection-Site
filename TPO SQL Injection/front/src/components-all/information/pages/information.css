@@ -1,0 +1,29 @@
+.background-body {
+  background-color: wheat;
+  margin: 0;
+}
+
+.main-body {
+  background: white;
+  margin: 0 20% 0 20%;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  border-style: solid;
+}
+
+.imagen {
+  max-height: fit-content;
+  width: 100%;
+}
+
+.section-title {
+  color: black;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: larger;
+}

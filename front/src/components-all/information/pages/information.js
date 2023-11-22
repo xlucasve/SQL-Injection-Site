@@ -2,10 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Foto from "../../../images/xckdMeme.png";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  atomOneDarkReasonable,
-  docco,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomOneDarkReasonable } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Button from "@mui/material/Button";
 
 import "./information.css";
